@@ -1,0 +1,30 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/ChatSheet.css" />
+
+<div id="data-container">
+	<div id="channels-buttons">
+		@foreach (var item in (IEnumerable<string>)ViewData["Channels"]!)
+		{
+			<button onclick="channelButtonClick('@item')">@item</button>
+		}
+	</div>
+	<table id="chatbox">
+	@foreach (var item in ((Dictionary<string,IEnumerable<Frontend.Models.ChatMessage>>)ViewData["Messages"]!)[(string)ViewData["Channel"]!])
+	{
+		<tr class="message">
+			<td class="user" style="color:@item.Color">@item.User</td>
+			<td class="content">@item.Content</td>
+		</tr>
+	}
+	</table>
+	<div id="channel-manage">
+        <input type="text" id="channelName" name="channelName">
+        <button onclick="addChannel()">Add channel</button>
+        <button onclick="removeChannel()">Remove channel</button>
+      </div>
+</div>
+
+<script src="~/js/ChatScript.js"></script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <div id="data-container">
+    <div id="channels-buttons">
+      <button>#wmuga</button>
+      <button>#iarspider</button>
+    </div>
+      <table id="chatbox">
+        <tr class="message">
+          <td class="user" style="color:green">Wmuga</td>
+          <td class="content">KEKW KEKW KEKW KEKW KEKW KEKW KEKW KEKW </td>
+        </tr>
+        <tr class="message">
+          <td class="user" style="color:purple">Barabusik</td>
+          <td class="content">KEKW KEKW KEKW KEKW KEKW KEKW KEKW KEKW </td>
+        </tr>
+      </table>
+      <div id="channel-manage">
+        <input type="text" id="channelId" name="channelId">
+        <button onclick="addChannel()">Add channel</button>
+        <button onclick="removeChannel()">Remove channel</button>
+      </div>
+  </div>
+
+  <style>
+    #data-container{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+      width: max-content;
+    }
+    #channels-buttons{
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
+    }
+
+    #channel-manage{
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
+    }
+
+    #chatbox{
+      border: 1px solid black;
+      width: 20em;
+      height: 40em;
+      display: inline-block;
+    }
+    td.user{
+      width: 5em;
+      height: max-content;
+      font-weight: bold;
+    }
+
+    td.content{
+      width: 14em;
+      height: max-content;
+    }
+
+    tr.message{
+      display: block;
+      border: 1px solid black;
+      margin-bottom: 0.3em;
+    }
+  </style>
+</body>
+</html>
